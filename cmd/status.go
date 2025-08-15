@@ -19,6 +19,7 @@ var statusCmd = &cobra.Command{
 		
 		if !s.Active {
 			fmt.Println("lyrix is not active")
+			fmt.Println("Get started with: lyrix start <artist> <title>")
 			return nil
 		}
 		

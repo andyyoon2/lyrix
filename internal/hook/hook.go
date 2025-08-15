@@ -113,7 +113,7 @@ func ExecuteHook(commitMsgFile string) error {
 	if err != nil {
 		// If no more lyrics, just use regular commit
 		if err.Error() == "no more lyrics available" {
-			fmt.Println("🎵 No more lyrics available. Queue a new song with 'lyrix queue'")
+			fmt.Println("No more lyrics available. Queue a new song with 'lyrix queue'")
 		}
 		return nil
 	}
@@ -173,8 +173,6 @@ func ExecuteHook(commitMsgFile string) error {
 	if err := os.WriteFile(commitMsgFile, []byte(newMessage.String()), 0644); err != nil {
 		return nil
 	}
-	
-	fmt.Printf("🎵 Using lyric: %s\n", nextLine)
 	
 	return nil
 }
