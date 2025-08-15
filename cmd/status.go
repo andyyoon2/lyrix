@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/andyyoon/git-lyrics/internal/state"
+	"github.com/andyyoon2/lyrix/internal/state"
 	"github.com/spf13/cobra"
 )
 
@@ -18,7 +18,7 @@ var statusCmd = &cobra.Command{
 		}
 		
 		if !s.Active {
-			fmt.Println("git-lyrics is not active")
+			fmt.Println("lyrix is not active")
 			return nil
 		}
 		

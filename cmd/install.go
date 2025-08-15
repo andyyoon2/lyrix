@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 
-	"github.com/andyyoon/git-lyrics/internal/hook"
+	"github.com/andyyoon2/lyrix/internal/hook"
 	"github.com/spf13/cobra"
 )
 
@@ -17,8 +17,8 @@ var installCmd = &cobra.Command{
 		}
 		
 		fmt.Println("✓ Git hook installed successfully")
-		fmt.Println("  Your commits will now use song lyrics as titles when git-lyrics is active")
-		fmt.Println("  Use 'git-lyrics start <artist> <title>' to begin")
+		fmt.Println("  Your commits will now use song lyrics as titles when lyrix is active")
+		fmt.Println("  Use 'lyrix start <artist> <title>' to begin")
 		
 		return nil
 	},

@@ -55,7 +55,7 @@ func FetchLyrics(artist, title string) ([]string, error) {
 		}
 		
 		// Add user agent as recommended by LRCLIB
-		req.Header.Set("User-Agent", "git-lyrics/1.0 (https://github.com/andyyoon/git-lyrics)")
+		req.Header.Set("User-Agent", "lyrix/1.0 (https://github.com/andyyoon2/lyrix)")
 		
 		resp, err = client.Do(req)
 		if err == nil {

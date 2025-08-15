@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/andyyoon/git-lyrics/cmd"
+	"github.com/andyyoon2/lyrix/cmd"
 )
 
 func main() {

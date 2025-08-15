@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"github.com/andyyoon/git-lyrics/internal/hook"
+	"github.com/andyyoon2/lyrix/internal/hook"
 	"github.com/spf13/cobra"
 )
 

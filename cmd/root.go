@@ -8,9 +8,9 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "git-lyrics",
+	Use:   "lyrix",
 	Short: "A tool to use song lyrics as git commit messages",
-	Long: `git-lyrics uses song lyrics line by line as your git commit titles.
+	Long: `lyrix uses song lyrics line by line as your git commit titles.
 Each commit will use the next line of the current song as the title,
 while preserving your commit message as the description.`,
 }

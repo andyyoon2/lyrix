@@ -22,7 +22,7 @@ type State struct {
 
 func GetStatePath() string {
 	home, _ := os.UserHomeDir()
-	return filepath.Join(home, ".git-lyrics", "state.json")
+	return filepath.Join(home, ".lyrix", "state.json")
 }
 
 func Load() (*State, error) {

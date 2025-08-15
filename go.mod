@@ -1,4 +1,4 @@
-module github.com/andyyoon/git-lyrics
+module github.com/andyyoon2/lyrix
 
 go 1.24.1
 

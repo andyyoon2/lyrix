@@ -1,4 +1,4 @@
-# git-lyrics
+# lyrix
 
 A CLI tool that uses song lyrics as your git commit message titles, line by line.
 
@@ -15,8 +15,8 @@ A CLI tool that uses song lyrics as your git commit message titles, line by line
 ### From Source
 
 ```bash
-go build -o git-lyrics .
-sudo mv git-lyrics /usr/local/bin/
+go build -o lyrix .
+sudo mv lyrix /usr/local/bin/
 ```
 
 ## Quick Start
@@ -24,12 +24,12 @@ sudo mv git-lyrics /usr/local/bin/
 1. Install the git hook in your repository:
 ```bash
 cd your-repo
-git-lyrics install
+lyrix install
 ```
 
 2. Start with a song:
 ```bash
-git-lyrics start "The Beatles" "Hey Jude"
+lyrix start "The Beatles" "Hey Jude"
 ```
 
 3. Make commits normally:
@@ -42,31 +42,31 @@ Your commit will have the next lyric line as the title, with your message as the
 
 ## Commands
 
-### `git-lyrics start <artist> <title>`
+### `lyrix start <artist> <title>`
 Start using lyrics from a song. Fetches lyrics and sets as active.
 
-### `git-lyrics queue <artist> <title>`
+### `lyrix queue <artist> <title>`
 Add a song to the queue. Will be used after current song ends.
 
-### `git-lyrics status`
+### `lyrix status`
 Show current song, position, and queue.
 
-### `git-lyrics next`
+### `lyrix next`
 Skip to the next song in queue.
 
-### `git-lyrics stop`
-Deactivate git-lyrics and clear all songs.
+### `lyrix stop`
+Deactivate lyrix and clear all songs.
 
-### `git-lyrics install`
+### `lyrix install`
 Install git hook in current repository.
 
-### `git-lyrics uninstall`
+### `lyrix uninstall`
 Remove git hook from current repository.
 
 ## How It Works
 
-1. git-lyrics fetches lyrics from lyrics.ovh API
-2. State is stored in `~/.git-lyrics/state.json`
+1. lyrix fetches lyrics from LRCLIB API
+2. State is stored in `~/.lyrix/state.json`
 3. A git `prepare-commit-msg` hook intercepts commits
 4. Each commit uses the next line, preserving your message
 
@@ -74,16 +74,16 @@ Remove git hook from current repository.
 
 ```bash
 # Install hook in your repo
-git-lyrics install
+lyrix install
 
 # Start with a classic
-git-lyrics start "Queen" "Bohemian Rhapsody"
+lyrix start "Queen" "Bohemian Rhapsody"
 
 # Queue another song
-git-lyrics queue "David Bowie" "Space Oddity"
+lyrix queue "David Bowie" "Space Oddity"
 
 # Check status
-git-lyrics status
+lyrix status
 
 # Make commits - each will use the next line
 git add feature.go
@@ -95,7 +95,7 @@ git commit -m "Fix critical bug"
 # Commit title: "Is this just fantasy?"
 
 # When done
-git-lyrics stop
+lyrix stop
 ```
 
 ## Notes

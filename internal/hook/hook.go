@@ -7,18 +7,18 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/andyyoon/git-lyrics/internal/state"
+	"github.com/andyyoon2/lyrix/internal/state"
 )
 
 const hookScript = `#!/bin/sh
-# git-lyrics prepare-commit-msg hook
+# lyrix prepare-commit-msg hook
 
 COMMIT_MSG_FILE=$1
 COMMIT_SOURCE=$2
 
 # Only process regular commits (not merges, squashes, etc.)
 if [ -z "$COMMIT_SOURCE" ] || [ "$COMMIT_SOURCE" = "message" ]; then
-    git-lyrics hook-exec "$COMMIT_MSG_FILE"
+    lyrix hook-exec "$COMMIT_MSG_FILE"
 fi
 `
 
@@ -47,11 +47,11 @@ func InstallHook() error {
 			return fmt.Errorf("failed to read existing hook: %w", err)
 		}
 		
-		if !strings.Contains(string(content), "git-lyrics") {
-			return fmt.Errorf("prepare-commit-msg hook already exists and is not managed by git-lyrics")
+		if !strings.Contains(string(content), "lyrix") {
+			return fmt.Errorf("prepare-commit-msg hook already exists and is not managed by lyrix")
 		}
 		
-		return fmt.Errorf("git-lyrics hook is already installed")
+		return fmt.Errorf("lyrix hook is already installed")
 	}
 	
 	// Create hooks directory if it doesn't exist
@@ -86,8 +86,8 @@ func UninstallHook() error {
 	}
 	
 	// Only remove if it's our hook
-	if !strings.Contains(string(content), "git-lyrics") {
-		return fmt.Errorf("existing hook is not managed by git-lyrics")
+	if !strings.Contains(string(content), "lyrix") {
+		return fmt.Errorf("existing hook is not managed by lyrix")
 	}
 	
 	if err := os.Remove(hookPath); err != nil {
@@ -113,7 +113,7 @@ func ExecuteHook(commitMsgFile string) error {
 	if err != nil {
 		// If no more lyrics, just use regular commit
 		if err.Error() == "no more lyrics available" {
-			fmt.Println("🎵 No more lyrics available. Queue a new song with 'git-lyrics queue'")
+			fmt.Println("🎵 No more lyrics available. Queue a new song with 'lyrix queue'")
 		}
 		return nil
 	}

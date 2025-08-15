@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/andyyoon/git-lyrics/internal/lyrics"
-	"github.com/andyyoon/git-lyrics/internal/state"
+	"github.com/andyyoon2/lyrix/internal/lyrics"
+	"github.com/andyyoon2/lyrix/internal/state"
 	"github.com/spf13/cobra"
 )
 
