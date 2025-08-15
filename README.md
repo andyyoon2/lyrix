@@ -40,6 +40,8 @@ git commit -m "Fixed bug in authentication"
 
 Your commit will have the next lyric line as the title, with your message as the description.
 
+Tip: Use `git commit -m ""` to let lyrix provide just the title.
+
 ## Commands
 
 ### `lyrix start <artist> <title>`
@@ -55,7 +57,10 @@ Show current song, position, and queue.
 Skip to the next song in queue.
 
 ### `lyrix stop`
-Deactivate lyrix and clear all songs.
+Deactivate lyrix (keeps current song and queue).
+
+### `lyrix clear`
+Clear all songs and queue, resetting to a fresh state.
 
 ### `lyrix install`
 Install git hook in current repository.
