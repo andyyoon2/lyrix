@@ -2,6 +2,8 @@
 
 A CLI tool that uses song lyrics as your git commit message titles, line by line.
 
+<img width="596" height="337" alt="Commit messages with lyrics" src="https://github.com/user-attachments/assets/58da7c12-bdaf-4b37-881e-5d5172fc8f83" />
+
 ## Features
 
 - Uses song lyrics progressively as commit titles
